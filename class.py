@@ -38,18 +38,28 @@ restaurant1.describe_restaurant()
 restaurant2.describe_restaurant()
 restaurant3.describe_restaurant()
 '''
-'''
+
 class User():
     def __init__(self, first_name, last_name, interest):
         self.first_name = first_name
         self.last_name = last_name
         self.interest = interest
+        self.login_attempts = 0
     def describe_user(self):
         print('First name is ' + self.first_name)
         print('Last name is ' + self.last_name)
         print('User interest is ' + self.interest)
+    def increment_login_attempts(self):
+        self.login_attempts += 1
+        return self.login_attempts
+    def reset_login_attempts(self):
+        self.login_attempts = 0
+        return self.login_attempts
 
 vince = User('Vince', 'Fiorilli', 'coding')
 
-vince.describe_user()
-'''
+#vince.describe_user()
+print(vince.increment_login_attempts())
+print(vince.increment_login_attempts())
+print(vince.increment_login_attempts())
+print(vince.reset_login_attempts())
