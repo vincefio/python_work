@@ -59,7 +59,21 @@ class User():
 vince = User('Vince', 'Fiorilli', 'coding')
 
 #vince.describe_user()
+'''
 print(vince.increment_login_attempts())
 print(vince.increment_login_attempts())
 print(vince.increment_login_attempts())
 print(vince.reset_login_attempts())
+'''
+
+#working with inheritence
+class IceCreamStand(Restaurant):
+    def __init__(self, restaurant_name, cuisine_type):
+        super().__init__(restaurant_name, cuisine_type)
+        self.flavors = ['vanilla', 'chocolate', 'strawberry']
+    def display_flavors(self):
+        for flavor in self.flavors:
+            print('flavors we have: ' + flavor)
+
+my_stand = IceCreamStand('vinces fudge pops', 'ice cream')
+my_stand.display_flavors()
