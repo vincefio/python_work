@@ -76,4 +76,23 @@ class IceCreamStand(Restaurant):
             print('flavors we have: ' + flavor)
 
 my_stand = IceCreamStand('vinces fudge pops', 'ice cream')
-my_stand.display_flavors()
+#my_stand.display_flavors()
+class Privilege():
+    def __init__(self):
+        self.privileges = ['can add post', 'can delete post', 'can ban user']
+    def show_privileges(self):
+        for privilege in self.privileges:
+            print('user priilege: ' + privilege)
+    def add_privilege(self):
+        self.privileges.append('new')
+
+#admin class
+class Admin(User):
+    def __init__(self, first_name, last_name, interest):
+        super().__init__(first_name, last_name, interest)
+        self.privileges = Privilege()
+
+
+admin = Admin('johnny', 'utah', 'football')
+admin.privileges.add_privilege()
+admin.privileges.show_privileges()
