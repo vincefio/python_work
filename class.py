@@ -1,23 +1,7 @@
-class Restaurant():
-    def __init__(self, restaurant_name, cuisine_type):
-        self.restaurant_name = restaurant_name
-        self.cuisine_type = cuisine_type
-        self.number_served = 0
+from restaurantMod import Restaurant
 
-    def describe_restaurant(self):
-        print('Restaurant name is ' + self.restaurant_name + ' and type is ' + self.cuisine_type)
+from random import randint
 
-    def open_restaurant(self):
-        print('restaurant is open')
-
-    def set_number_served(self):
-        newNum = input('how many have been served?')
-        self.number_served = newNum
-        print('new number served is ' + str(newNum))
-
-    def increment_number_served(self):
-        self.number_served += 1
-        print('number served incresed.  now ' + str(self.number_served))
 
 #make an instance of the class
 restaurant1 = Restaurant('bitches at work', 'organic')
@@ -94,5 +78,19 @@ class Admin(User):
 
 
 admin = Admin('johnny', 'utah', 'football')
+'''
 admin.privileges.add_privilege()
 admin.privileges.show_privileges()
+'''
+class Die():
+    def __init__(self):
+        self.sides = 6
+    def roll_die(self):
+        currentNum = 0
+        while currentNum < 10:
+            x = randint(1, 6)
+            print('random number is ' + str(x))
+            currentNum += 1
+
+six = Die()
+six.roll_die()
